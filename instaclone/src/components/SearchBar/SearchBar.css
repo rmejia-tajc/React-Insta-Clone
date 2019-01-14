@@ -1,0 +1,27 @@
+.searchBar{
+    border: 1px solid green;
+    max-width: 1024px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 64px;
+}
+
+.logos {
+    border: 1px solid red;
+    width: 200px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.logo {
+    height: 32px;
+}
+
+input {
+    text-align: center;
+}
+
+.far {
+    font-size: 2rem;
+}
