@@ -1,5 +1,6 @@
 .searchBar{
-    border: 1px solid green;
+    background-color: white;
+    border-bottom: 1px solid lightgrey;
     max-width: 1024px;
     display: flex;
     justify-content: space-between;
@@ -8,7 +9,6 @@
 }
 
 .logos {
-    border: 1px solid red;
     width: 200px;
     display: flex;
     justify-content: space-around;

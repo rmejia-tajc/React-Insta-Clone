@@ -146,3 +146,12 @@ my CSS
 html {
   font-size: 62.5%;
 }
+
+body {
+  font-family: "Roboto", "Arial", sans-serif;
+  background-color: #fafafa;
+}
+
+.App {
+  margin: 0 auto;
+}
