@@ -15,8 +15,7 @@ function PostContainer (props) {
                             key={index}
                         />
                         <CommentSection
-                            likes={post.likes}
-                            commentsArray={post.comments}
+                            post={post}
                         />
                     </div>
                 )
