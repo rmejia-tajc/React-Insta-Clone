@@ -8,7 +8,8 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      dummyData: []
+      dummyData: [],
+      searchTerm: '',
     };
   }
 
@@ -18,17 +19,23 @@ class App extends Component {
 
   searchFilter = event => {
     event.preventDefault();
-    this.setState({
-      dummyData: this.state.dummyData.filter(item => {
-        if (item.username === this.state.newSearch) {
-          return item;
-        }
-      })
-    })
-  }
+
+    if (!this.state.newSearch) {
+      this.setState({
+        dummyData: dummyData,
+      });
+    } else {
+      this.setState({
+        dummyData: this.state.dummyData.filter(post => {
+          return post.username === this.state.newSearch;
+        }),
+      });
+    }
+  };
 
   changeHandler = (event) => {
-    this.setState({newSearch: event.target.value})
+    this.setState({newSearch: event.target.value});
+    console.log(event.target.value);
   };  
 
   render() {

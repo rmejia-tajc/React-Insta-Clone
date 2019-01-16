@@ -18,16 +18,16 @@ class CommentSection extends React.Component {
         event.preventDefault();
         this.setState({
             comments: [...this.state.comments,
-                {text: this.state.newComm,
+                {text: this.state.newComment,
                     username: 'TESTUSER'
                 }],
-                newComment: '',
+                newComment: ''
             }) 
         };
 
         changeHandler = (event) => {
             this.setState({
-                newComm: event.target.value
+                newComment: event.target.value
             })
           };   
           
@@ -68,7 +68,7 @@ class CommentSection extends React.Component {
                         type="text"
                         name="newComment" 
                         placeholder="Add a comment..."
-                        value={this.state.newComm}
+                        value={this.state.newComment}
                         onChange={this.changeHandler}
                     />
                 </form>
