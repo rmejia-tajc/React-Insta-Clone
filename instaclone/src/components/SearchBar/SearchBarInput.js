@@ -4,8 +4,11 @@ import React from 'react';
 
 function SearchBarInput(props) {
     return (
-        <form>
-            <input type="text" placeholder="Search" />
+        <form onSubmit={props.filter}>
+            <input
+                onChange={props.change}
+                placeholder="Search"
+            />
         </form>
     );
 }

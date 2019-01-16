@@ -10,7 +10,10 @@ function SearchBarContainer(props) {
     return (
         <div className="searchBar">
             <SearchBarLogo />
-            <SearchBarInput />
+            <SearchBarInput             
+                filter={props.filter}
+                change={props.change}
+            />
             <SearchBarNav />
         </div>
     );

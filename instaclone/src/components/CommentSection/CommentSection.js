@@ -43,8 +43,8 @@ class CommentSection extends React.Component {
         
                 <div>
                     <div className="likeComment">
-                        <i onClick={this.upLikes} class="far fa-heart"></i>
-                        <i class="far fa-comment"></i>
+                        <i onClick={this.upLikes} className="far fa-heart"></i>
+                        <i className="far fa-comment"></i>
                     </div>
 
                     <h3 className="likes">{this.state.likes} likes</h3>
