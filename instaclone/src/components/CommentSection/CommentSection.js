@@ -19,23 +19,23 @@ class CommentSection extends React.Component {
         this.setState({
             comments: [...this.state.comments,
                 {text: this.state.newComment,
-                    username: 'TESTUSER'
+                    username: localStorage.getItem('username')
                 }],
                 newComment: ''
             }) 
         };
 
-        changeHandler = (event) => {
-            this.setState({
-                newComment: event.target.value
-            })
-          };   
-          
-        upLikes = event => {
-            this.setState({
-                likes: this.state.likes + 1
-            })
-        };
+    changeHandler = (event) => {
+        this.setState({
+            newComment: event.target.value
+        })
+        };   
+        
+    upLikes = event => {
+        this.setState({
+            likes: this.state.likes + 1
+        })
+    };
 
     render () {
         return (
