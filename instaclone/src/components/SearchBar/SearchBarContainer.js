@@ -4,6 +4,7 @@ import './SearchBar.css'
 import SearchBarLogo from './SearchBarLogo';
 import SearchBarInput from './SearchBarInput'
 import SearchBarNav from './SearchBarNav'
+import styled from 'styled-components';
 
 
 function SearchBarContainer(props) {
