@@ -1,7 +1,7 @@
 import React from "react";
 import './Comment.css';
 import PropTypes from "prop-types";
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 const I = styled.i`
     font-size: 2rem;
@@ -10,6 +10,42 @@ const I = styled.i`
 const H3 = styled.h3`
     font-size: 1.4rem;
     font-weight: bold;
+
+    ${props => props.likes && css`
+        margin-bottom: 20px;
+    `};
+`
+
+const CommentSectionDiv = styled.div`
+    width: 95%;
+    margin: 0 auto;
+`
+
+const LikeCommentDiv = styled.div`
+    margin: 10px 0;
+    display: flex;
+    justify-content: space-between;
+    width: 60px;
+`
+
+const CommentLi = styled.li`
+    display: flex;
+    align-items: baseline;
+    margin-bottom: 10px;
+`
+
+const CommentTextP = styled.p`
+    font-size: 1.4rem;
+    margin-left: 8px;
+`
+
+const AddCommentInput = styled.input`
+    width: 100%;
+    text-align: start;
+    border: 0px;
+    border-top: 1px solid lightgrey;
+    padding: 10px 0;
+    margin: 10px 0;
 `
 
 class CommentSection extends React.Component {
@@ -49,31 +85,31 @@ class CommentSection extends React.Component {
 
     render () {
         return (
-            <div className="commentSection">
+            <CommentSectionDiv className="commentSection">
         
                 <div>
-                    <div className="likeComment">
+                    <LikeCommentDiv className="likeComment">
                         <I onClick={this.upLikes} className="far fa-heart"></I>
                         <I className="far fa-comment"></I>
-                    </div>
+                    </LikeCommentDiv>
 
-                    <H3 className="likes">{this.state.likes} likes</H3>
+                    <H3 likes className="likes">{this.state.likes} likes</H3>
 
                 </div>
         
                 <ul>
                     {this.state.comments.map(({ username, text }, index) => (
         
-                        <li className="comment" key={index}>
+                        <CommentLi className="comment" key={index}>
                         <H3 className="commentUser">{username}</H3>
-                        <p className="commentText">{text}</p>
-                        </li>
+                        <CommentTextP className="commentText">{text}</CommentTextP>
+                        </CommentLi>
         
                     ))}
                 </ul>
         
                 <form onSubmit={this.addNewComment}>
-                    <input 
+                    <AddCommentInput 
                         className="addComment"
                         type="text"
                         name="newComment" 
@@ -83,7 +119,7 @@ class CommentSection extends React.Component {
                     />
                 </form>
         
-            </div>
+            </CommentSectionDiv>
 
         );
     }
