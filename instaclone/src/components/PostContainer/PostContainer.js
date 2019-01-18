@@ -3,13 +3,21 @@ import './Post.css';
 import PostContent from "./PostContent"
 import CommentSection from "../CommentSection/CommentSection"
 import PropTypes from "prop-types";
+import styled from "styled-components";
+
+const Div = styled.div`
+    border: 1px solid lightgrey;
+    background-color: white;
+    width: 600px;
+    margin-bottom: 40px;
+`
 
 function PostContainer (props) {
     return (
         <div>
             {props.postList.map((post, index) => {
                 return (
-                    <div className="postWindow" key={index}>
+                    <Div className="postWindow" key={index}>
                         <PostContent
                             post={post}
                             key={index}
@@ -17,7 +25,7 @@ function PostContainer (props) {
                         <CommentSection
                             post={post}
                         />
-                    </div>
+                    </Div>
                 )
             })}
         </div>

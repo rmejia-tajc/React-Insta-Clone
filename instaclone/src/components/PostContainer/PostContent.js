@@ -1,19 +1,39 @@
 import React from 'react';
 import './Post.css';
 import PropTypes from 'prop-types';
+import styled from 'styled-components';
 
+
+const ImgThumb = styled.img`
+    border-radius: 50%;
+    height: 32px;
+    margin: 10px;
+`
+
+const ImgPost = styled.img`
+    width: 100%;
+`
+const H3 = styled.h3`
+    font-size: 1.4rem;
+    font-weight: bold;
+`
+
+const Div = styled.div`
+    display: flex;
+    align-items: center;
+`
 
 function PostContent(props) {
     return (
         <div className="postContent">
         
-            <div className="userTitle">
-                <img className="userThumb" src={props.post.thumbnailUrl} alt={`${props.post.username} thumbnail`} />
+            <Div className="userTitle">
+                <ImgThumb className="userThumb" src={props.post.thumbnailUrl} alt={`${props.post.username} thumbnail`} />
                 
-                <h3 className="userName">{props.post.username}</h3>
-            </div>
+                <H3 className="userName">{props.post.username}</H3>
+            </Div>
 
-            <img className="postImg" src={props.post.imageUrl} alt='main post' />
+            <ImgPost className="postImg" src={props.post.imageUrl} alt='main post' />
 
         </div>
     );

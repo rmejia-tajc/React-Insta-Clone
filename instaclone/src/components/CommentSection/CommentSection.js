@@ -1,6 +1,16 @@
 import React from "react";
 import './Comment.css';
 import PropTypes from "prop-types";
+import styled from 'styled-components';
+
+const I = styled.i`
+    font-size: 2rem;
+`
+
+const H3 = styled.h3`
+    font-size: 1.4rem;
+    font-weight: bold;
+`
 
 class CommentSection extends React.Component {
     constructor(props) {
@@ -43,11 +53,11 @@ class CommentSection extends React.Component {
         
                 <div>
                     <div className="likeComment">
-                        <i onClick={this.upLikes} className="far fa-heart"></i>
-                        <i className="far fa-comment"></i>
+                        <I onClick={this.upLikes} className="far fa-heart"></I>
+                        <I className="far fa-comment"></I>
                     </div>
 
-                    <h3 className="likes">{this.state.likes} likes</h3>
+                    <H3 className="likes">{this.state.likes} likes</H3>
 
                 </div>
         
@@ -55,7 +65,7 @@ class CommentSection extends React.Component {
                     {this.state.comments.map(({ username, text }, index) => (
         
                         <li className="comment" key={index}>
-                        <h3 className="commentUser">{username}</h3>
+                        <H3 className="commentUser">{username}</H3>
                         <p className="commentText">{text}</p>
                         </li>
         
