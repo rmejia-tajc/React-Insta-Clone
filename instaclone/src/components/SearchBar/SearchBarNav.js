@@ -1,14 +1,25 @@
 import React from 'react';
 // import PropTypes from 'prop-types';
+import styled from 'styled-components';
+
+const Div = styled.div`
+    width: 200px;
+    display: flex;
+    justify-content: space-around;
+`
+
+const I = styled.i`
+    font-size: 2rem;
+`
 
 
 function SearchBarNav(props) {
     return (
-        <div className="logos">
-            <i className="far fa-compass"></i>
-            <i className="far fa-heart"></i>
-            <i className="far fa-user"></i>
-        </div>
+        <Div className="logos">
+            <I className="far fa-compass"></I>
+            <I className="far fa-heart"></I>
+            <I className="far fa-user"></I>
+        </Div>
     );
 }
 
